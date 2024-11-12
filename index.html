@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Метод хорд</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="lib/math.js"></script>
+    <script src="lib/desmos.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Метод хорд для поиска корней уравнения</h1>
+
+      <form id="chord-form">
+        <div class="form-group">
+          <label for="function">Функция:</label>
+          <input
+            type="text"
+            id="function"
+            placeholder="Например: x^3 - x - 2"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="interval-a">Начало интервала (a):</label>
+          <input type="number" id="interval-a" step="1" />
+        </div>
+
+        <div class="form-group">
+          <label for="interval-b">Конец интервала (b):</label>
+          <input type="number" id="interval-b" step="1" />
+        </div>
+
+        <div class="form-group">
+          <label for="precision">Точность:</label>
+          <input type="number" id="precision" step="0.0001" />
+        </div>
+
+        <button type="button" onclick="executeChordMethod()">Рассчитать</button>
+      </form>
+
+      <div id="result" class="result-section">
+        <h2>Результаты расчёта</h2>
+        <div id="summary" class="summary"></div>
+        <div id="tolerance-table" class="disp-none">
+          <h2>Результаты для разных уровней точности</h2>
+          <table>
+            <thead>
+              <tr>
+                <th>Точность</th>
+                <th>Количество итераций</th>
+                <th>Корень</th>
+              </tr>
+            </thead>
+            <tbody id="tolerance-body"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <div id="plot"></div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
