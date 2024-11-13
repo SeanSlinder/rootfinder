@@ -130,7 +130,7 @@ function setFunction(expression) {
 }
 
 // Поиск интервала, содержащего корень
-function findInterval(f, a, b, step = 0.1) {
+function findInterval(f, a, b, step) {
   let intervals = [];
 
   for (let x = a; x < b; x += step) {
